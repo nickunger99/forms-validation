@@ -1,0 +1,157 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>UC9 Formulário</title>
+      <link rel="stylesheet" href="_css/formulario.css">
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css " rel = "stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+<script type="text/javascript">  
+  // a  Representa caracteres alfabéticos (letras) (A-Z,a-z)
+  // a  Porém 'a' não permite acentuação nem ç 
+  // 9  Representa caracteres numéricos (números) (0-9)
+  // *  Representa caracteres alfanuméricos (letras e números) (A-Z,a-z,0-9)
+  $(function() {
+/*   $('.mask-numeros').mask('9999999999'); //caracteres numéricos */
+  $('.mask-cpf').mask('999.999.999-99'); //CPF
+/*   $('.mask-real').maskMoney({showSymbol:true,symbol:'R$ ', 
+  decimal:',', thousands:'.', allowZero:true}); // valores monetários  */ 
+}); 
+</script>
+  </head>
+  <body>
+      
+      
+
+  <section class="contact-form">
+    <form method="POST" id="cadastro"  action="" name="cadastro" onsubmit="validar_tudo();">
+      <div>
+        <p id="data">
+          <input type="text" id="datahoje" name="data_cadastro" disabled >
+          </p>
+          <p type="text" id="tempo" name="tempo"></p> 
+  
+      </div>
+
+      <h1>Cadastre-se:</h1>
+      <div> 
+      Nome: 
+        <input name="nome" id="nome" type="text" minlength="10" maxlength="80" placeholder="Nome Completo" size="25" required autocomplete="off">
+        <br>
+      </div>
+    
+    <div>    Apelido:
+      <input name="nickname" id="nickname" type="text" minlength="2" maxlength="20"placeholder="Apelido" size="23" required autocomplete="off">
+      <br>
+    </div>
+    <div>    E-mail:
+      <input name="e-mail" id="email" type="email" maxlength="40"placeholder="example@example.com" size="25" required autocomplete="off">
+      <br>
+    </div>
+    <div>    Data de nascimento:
+      <input name="data" id="birth" type="date" SIZE=3 required>
+    
+      <br>
+    </div>
+    
+    <div>    CPF:
+      <input name="cpf" id="cpf" type="text" size="13" maxlength="14" placeholder="000.000.000-00" class="mask-cpf" required autocomplete="off">
+      <br>
+    </div>
+    
+    <div> 
+    <label name="time">Time do coração:</label>
+      <select id="team_id" maxlength="20">
+        <option>Selecione</option>
+        <option value="1" id="t1">Corinthians</option>
+        <option value="2" id="t2">Santos</option>
+        <option value="3" id="t3">São Paulo</option>
+        <option value="4" id="t4">Palmeiras</option>
+        <option value="5" id="t100">Outro</option>
+      </select>
+      <br>
+    </div>
+    
+    <div>Esportes de interesse:<br>
+      <input type="checkbox" name="sport" id="1" value="futebol" >Futebol<br>
+      <input type="checkbox" name="sport" id="2" value="volei" >Vôlei<br>
+      <input type="checkbox" name="sport" id="3" value="basquete" >Basquete<br>
+      <input type="checkbox" name="sport" id="4" value="futsal" >Futsal<br>
+      <input type="checkbox" name="sport" id="5" value="automobilismo" >Automobilismo<br>
+      <input type="checkbox" name="sport" id="6" value="artes marciais" >Artes Marciais<br>
+      <input type="checkbox" name="sport" id="7" value="natacao" >Natação<br>
+    </div>
+<div></div>
+    
+
+    
+      <!-- Inicio do formulario -->
+        <div class="end">
+          <form method="get" action="">
+          <label> Cep:
+          <input name="cep" type="text" id="cep" value="" size="7" maxlength="9"
+          onblur="pesquisacep(this.value);" required autocomplete="off" /> </label>
+          <label> Rua:
+            <input name="rua" type="text" id="rua" size="40" /></label> <br>
+          </div>
+          <div>
+          <label> Nº:
+          <input name="numero" type="text" id="numero" size="2" required autocomplete="off" /></label> &nbsp;
+          <label> Complemento:
+            <input name="complemento" type="text" id="complemento" size="14" /></label><br>
+            </div>
+          <div>
+          <label> Bairro:
+          <input name="bairro" type="text" id="bairro" size="21" /></label>
+          <label> Cidade:
+            <input name="cidade" type="text" id="cidade" size="20" /></label><br />    
+            
+        </div>
+          <div>
+          <label> Estado:
+          <input name="uf" type="text" id="uf" size="1" /></label>
+          <label> IBGE:
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br/>
+        
+          </div>
+          <div>
+            <label for="login">Para assinas, informe Login e Senha:</label></td>
+            <br>
+    <td><input type="text" name="login" id="login"
+      autocomplete="off" placeholder="Login (teste JSON: nicknick)" 
+      maxlength="15" minlength="5" size=25> <br>
+      <input type="password" name="senha" id="senha" 
+      autocomplete="off" placeholder="Senha (teste JSON: nick@123)" 
+      maxlength="8" minlength="6" size=25>
+          </div>
+          <div>
+            
+          <input type="submit" value="Enviar" class="botao">
+          <input type="reset" value="Limpar" class="botao">
+    
+          </div>
+        </form>
+        </div>
+
+        
+        </form>
+        
+        <div class="results">
+          <h2>Formato Json:</h2>
+          <pre></pre>
+        </div>
+        
+    </section>
+  
+    
+    <script src="_javascript/script.js"></script>
+    
+  </body>
+  </html>

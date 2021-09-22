@@ -1,0 +1,68 @@
+body{
+    background-color: #E1E7EB;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #272c4e;
+}
+.results pre {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: color-lightest;
+    border: 1px solid var(--color-gray-light);
+    overflow-x: scroll;
+  }
+h1{
+    padding: 0;
+    text-align: center;
+    color: #444965;
+    margin-top: 0;
+}
+
+div{
+    color: #444965;
+    font-weight: bold;
+    padding: 2px;
+}
+
+input{
+    border: solid 2px #444965;
+    border-radius: 5px;
+}
+input:focus{
+    background-color: #e7e3f8;
+}
+
+.botao{
+    font-size: 1em;
+    background: #444965;
+    margin-bottom: 1em ;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.botao:hover{
+    background: #272c4e;
+}
+
+/* #datahoje, #tempo, #data {
+    border: 0;
+    background-color: #E1E7EB;
+    color: #E1E7EB;
+} */
+
+p{  
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+}
+ 
